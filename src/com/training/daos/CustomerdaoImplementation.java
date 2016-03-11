@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import com.training.domains.Customer;
 
 import com.training.ifaces.MyDAO;
+import com.training.utils.CustomerRowMapper;
 
 
 public class CustomerdaoImplementation extends JdbcDaoSupport implements MyDAO<Customer> {
@@ -15,7 +16,7 @@ public class CustomerdaoImplementation extends JdbcDaoSupport implements MyDAO<C
 	@Override
 	public Customer find(int key) {
 		String sql = "SELECT * FROM CUSTOMER2016 WHERE  CUSTOMERID= ?";
-		Customer cust = getJdbcTemplate().queryForObject(sql,new BeanPropertyRowMapper<Customer>(Customer.class),key);
+		Customer cust = getJdbcTemplate().queryForObject(sql,new CustomerRowMapper(),key);
 		return cust;
 	}
 

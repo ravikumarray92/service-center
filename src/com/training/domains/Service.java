@@ -1,11 +1,13 @@
 package com.training.domains;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component("service")
 public class Service {
-
+   
 	private Customer customer;
+  
 	private Items items;
 	private int serviceId;
 	private String problemDescription;

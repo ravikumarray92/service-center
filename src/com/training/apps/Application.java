@@ -42,8 +42,30 @@ public class Application {
 		myservices.setItems(myitems);
 		myservices.setProblemDescription("Screen Not Working");
 		myservices.setServiceId(101);
-		boolean result3 = obj3.add(myservices);
-		System.out.println("Added Into Services2016 Table = "+ result3);
+		//boolean result3 = obj3.add(myservices);
+		//System.out.println("Added Into Services2016 Table = "+ result3);
+		
+		System.out.println("=============== find() method of Customer==============");
+		Customer customerDetails = obj1.find(203);
+		System.out.println(customerDetails);
+		
+		System.out.println("=============== find() method of Items==============");
+		Items itemDetails = obj2.find(103);
+		System.out.println(itemDetails);
+		
+		System.out.println("=============== find() method of Service==============");
+		Service serviceDetails = obj3.find(101);
+		System.out.println(serviceDetails);
+		
+		System.out.println("=============== findAll() method of Customer==============");
+		System.out.println(obj1.findAll());
+		
+		System.out.println("=============== findAll() method of Items==============");
+		System.out.println(obj2.findAll());
+		
+		
+		System.out.println("=============== findAll() method of Service==============");
+		System.out.println(obj3.findAll());
 		
 		
 	}

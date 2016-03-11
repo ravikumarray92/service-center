@@ -8,13 +8,14 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 import com.training.domains.Items;
 import com.training.ifaces.MyDAO;
+import com.training.utils.ItemsRowMapper;
 
 public class ItemsdaoImplementation extends JdbcDaoSupport implements MyDAO<Items>{
 
 	@Override
 	public Items find(int key) {
 		String sql = "SELECT * FROM ITEMS2016 WHERE  ITEMID= ?";
-		Items items = getJdbcTemplate().queryForObject(sql,new BeanPropertyRowMapper<Items>(Items.class),key);
+		Items items = getJdbcTemplate().queryForObject(sql,new ItemsRowMapper(),key);
 		return items;
 	}
 
